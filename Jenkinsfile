@@ -27,7 +27,7 @@ pipeline {
                 script {
                     // Use Jenkins credentials for Docker Hub login
                     withCredentials([usernamePassword(credentialsId: dockerHubCredentials, usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
-                        sh "docker login 192.168.10.5:5000 -u $DOCKER_USERNAME --password-stdin < $DOCKER_PASSWORD"
+                        sh "docker login 192.168.10.5:5000 -u $DOCKER_USERNAME -p $DOCKER_PASSWORD"
                         sh 'docker push --all-tags 192.168.10.5:5000/aryawpratama/${IMAGE_NAME}'
                     }
                 }
