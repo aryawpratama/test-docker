@@ -17,7 +17,7 @@ pipeline {
         stage('Building image') {
             steps {
                 script {
-                    sh 'docker build . -t 10.10.3.13:5000/aryawpratama/${imagename}:latest'
+                    sh 'docker build . -t 192.168.10.5:5000/aryawpratama/${imagename}:latest'
                 }
             }
         }
