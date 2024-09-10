@@ -1,3 +1,1 @@
-add readme
-trigger
 trigger
